@@ -1,5 +1,7 @@
 package com.itwill.service;
 
-public interface MemberService {
+import com.itwill.domain.MemberBean;
 
+public interface MemberService {
+	public void insertMember(MemberBean bb);
 }

@@ -1,5 +1,7 @@
 package com.itwill.dao;
 
-public interface MemberDAO {
+import com.itwill.domain.MemberBean;
 
+public interface MemberDAO {
+	public void insertMember(MemberBean mb);
 }

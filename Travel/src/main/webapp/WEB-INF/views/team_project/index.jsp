@@ -14,7 +14,7 @@
 <title>wetravel.co.kr - 최저가 항공권, 동행자 찾기</title>
 
 <!-- Bootstrap core CSS -->
-<link href="resources/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="./resources/assets/css/bootstrap.min.css" rel="stylesheet">
 <script src="./resources/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 	// 마우스 포커스 활성화 시 placeholder 삭제
@@ -58,8 +58,8 @@
 
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="resources/assets/jquery/jquery.slim.min.js"></script>
-	<script src="resources/assets/js/bootstrap.bundle.min.js"></script>
+	<script src="./resources/assets/jquery/jquery.slim.min.js"></script>
+	<script src="./resources/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
