@@ -31,10 +31,10 @@ String id=(String)session.getAttribute("id");
 					<li class="nav-item">
 					<%
 						if(id==null){ 
-							%><div id="login"><a class="nav-link"  href="/member/loginForm.jsp">로그인</a></div>
+							%><div id="login"><a class="nav-link"  href="login">로그인</a></div>
 							<%
 						}else{
-							%><div id="login"><a class="nav-link"  href="/member/memberInfo.jsp"><%=id %>님</a></div>
+							%><div id="login"><a class="nav-link"  href="memberInfo"><%=id %>님</a></div>
 							<%
 						}
 						%>

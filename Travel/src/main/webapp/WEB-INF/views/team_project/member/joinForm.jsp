@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<!-- 헤더가 들어가는 곳 -->
+	<jsp:include page="../inc/top.jsp" />
+	<!-- 헤더가 들어가는 곳 -->
+	
+	
 </body>
 </html>
