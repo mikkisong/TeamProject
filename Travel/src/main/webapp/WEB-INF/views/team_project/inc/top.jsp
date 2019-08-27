@@ -5,6 +5,35 @@
 String id=(String)session.getAttribute("id");
 
 %>
+<style>
+li.nav-item {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-item a:hover {color: #f1f1f1;}
+
+.nav-item:hover .dropdown-content {
+  display: block;
+}
+
+</style>
 <div class="clear"></div>
 <!-- 로고들어가는 곳 -->
 <!-- 로고들어가는 곳 -->
@@ -21,7 +50,13 @@ String id=(String)session.getAttribute("id");
 					<li class="nav-item active"><a class="nav-link" href="index">홈
 							<span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" href="board">여행스토리</a></li>
+					<li class="nav-item"><a class="nav-link" href="board">여행스토리</a>
+					 <div class="dropdown-content">
+					      <a href="#">여행후기</a>
+					      <a href="#">소소한 팁</a>
+					      <a href="#">여행갤러리</a>
+					    </div>
+					</li>
 					<li class="nav-item"><a class="nav-link" href="community">커뮤니티</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="qna">고객센터</a>

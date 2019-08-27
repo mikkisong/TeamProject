@@ -16,6 +16,7 @@
 <!-- Bootstrap core CSS -->
 <link href="./resources/assets/css/bootstrap.min.css" rel="stylesheet">
 <script src="./resources/jquery-3.4.1.js"></script>
+
 <script type="text/javascript">
 	// 마우스 포커스 활성화 시 placeholder 삭제
 </script>
@@ -36,14 +37,19 @@
 						<p class="lead">최저가 항공권 예약, 동행자 찾기</p>
 					</div>
 					<div class="search">
-					<div class="city">
-						<input type="search" role="combobox" aria-autocomplete="both"
-							aria-owns="ssg-suggestions" autocomplete="off" autocorrect="off"
-							autocapitalize="none" name="sQuery"
-							class="js-query input querytext" id="search text"
-							placeholder="예) 바르셀로나">
+						<div class="city">
+							<input type="search" role="combobox" aria-autocomplete="both"
+								aria-owns="ssg-suggestions" autocomplete="off" autocorrect="off"
+								autocapitalize="none" name="sQuery"
+								class="js-query input querytext" id="search text"
+								placeholder="예) 바르셀로나">
 						</div>
 
+						<div class="calendar">
+							<table class="calendar1">
+								
+							</table>
+						</div>
 
 
 

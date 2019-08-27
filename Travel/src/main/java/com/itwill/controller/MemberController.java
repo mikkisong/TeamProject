@@ -22,6 +22,14 @@ public class MemberController {
 
 		return "team_project/member/memberInfo";
 	}
+	
+	// http://localhost:8080/myapp/join
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String join(HttpSession session) {
+		System.out.println("/MemberController GET join() ");
+
+		return "team_project/member/joinForm";
+	}
 
 	
 }
