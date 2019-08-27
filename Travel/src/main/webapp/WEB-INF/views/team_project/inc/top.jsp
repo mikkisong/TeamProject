@@ -24,7 +24,7 @@ String id=(String)session.getAttribute("id");
 					<li class="nav-item"><a class="nav-link" href="board">여행스토리</a></li>
 					<li class="nav-item"><a class="nav-link" href="community">커뮤니티</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="cs">고객센터</a>
+					<li class="nav-item"><a class="nav-link" href="qna">고객센터</a>
 					</li>
 							
 					
