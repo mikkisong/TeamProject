@@ -14,7 +14,7 @@ li.nav-item {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -58,6 +58,10 @@ li.nav-item {
 					    </div>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="community">커뮤니티</a>
+					 <div class="dropdown-content">
+					      <a href="#">동행찾기</a>
+					      <a href="#">자유게시판</a>
+					    </div>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="qna">고객센터</a>
 					</li>
