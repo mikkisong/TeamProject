@@ -65,6 +65,12 @@
 			<version>1.2.2</version>
 		</dependency>
 		<!-- 새로 넣은 4개 -->
+		<!-- log4jdbc  sql 로그-->
+		<dependency>
+		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+		    <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+		    <version>1.16</version>
+		</dependency>
 		
 				
 		<!-- AspectJ -->
