@@ -16,6 +16,7 @@
 <!-- Bootstrap core CSS -->
 <link href="./resources/assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="./resources/assets/css/main.scss" rel="stylesheet">
+
 <script src="./resources/jquery-3.4.1.js"></script>
 
 <script type="text/javascript">
