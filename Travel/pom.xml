@@ -36,7 +36,7 @@
 		
 		
 		
-		<!-- 새로 넣은 4개333333 -->
+		<!-- 새로 넣은 4개 -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
