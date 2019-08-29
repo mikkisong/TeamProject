@@ -5,6 +5,7 @@
 String id=(String)session.getAttribute("id");
 
 %>
+
 <style>
 li.nav-item {
   display: inline-block;

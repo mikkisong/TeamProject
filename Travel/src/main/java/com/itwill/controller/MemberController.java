@@ -20,7 +20,7 @@ public class MemberController {
 	public String memberInfo(HttpSession session) {
 		System.out.println("/MemberController GET memberInfo() ");
 
-		return "team_project/member/memberInfo";
+		return "/team_project/member/memberInfo";
 	}
 	
 	// http://localhost:8080/myapp/join
@@ -28,7 +28,7 @@ public class MemberController {
 	public String join(HttpSession session) {
 		System.out.println("/MemberController GET join() ");
 
-		return "team_project/member/joinForm";
+		return "/team_project/member/joinForm";
 	}
 
 	

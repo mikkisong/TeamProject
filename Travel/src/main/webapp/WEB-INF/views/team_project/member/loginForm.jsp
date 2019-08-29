@@ -13,32 +13,37 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./resources/assets/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>로그인 폼</title>
+<style>
 
+#content {
+    margin: 0 auto;
+}
+
+</style>
   </head>
 
   <body cellpadding="0" cellspacing="0" marginleft="0" margintop="0" width="100%" height="100%" align="center">
 
-	<div class="card align-middle" style="width:20rem; border-radius:20px;">
+	<div class="card align-middle" id="content" style="width:20rem; border-radius:20px;">
 		<div class="card-title" style="margin-top:30px;">
 			<h2 class="card-title text-center" style="color:#113366;">로그인 폼</h2>
 		</div>
 		<div class="card-body">
-      <form class="form-signin" method="POST" onSubmit="logincall();return false">
-        <h5 class="form-signin-heading">로그인 정보를 입력하세요</h5>
-        <label for="inputEmail" class="sr-only">Your ID</label>
-        <input type="text" id="uid" class="form-control" placeholder="Your ID" required autofocus><BR>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="upw" class="form-control" placeholder="Password" required><br>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> 기억하기
-          </label>
-        </div>
-        <button id="btn-Yes" class="btn btn-lg btn-primary btn-block" type="submit">로 그 인</button>
-        <button id="btn-signup" type="button" onclick="location.href='join'">회원가입</button>
-        
-      </form>
-      
+	      <form class="form-signin" method="POST" onSubmit="logincall();return false">
+	        <h5 class="form-signin-heading">로그인 정보를 입력하세요</h5>
+	        <label for="inputEmail" class="sr-only">Your ID</label>
+	        <input type="text" id="uid" class="form-control" placeholder="Your ID" required autofocus><BR>
+	        <label for="inputPassword" class="sr-only">Password</label>
+	        <input type="password" id="upw" class="form-control" placeholder="Password" required><br>
+		        <div class="checkbox">
+		          <label>
+		            <input type="checkbox" value="remember-me"> 기억하기
+		          </label>
+		        </div>
+	        <button id="btn-Yes" class="btn btn-lg btn-primary btn-block" type="submit">로 그 인</button><br>
+	        <button id="btn-find" type="button" onclick="location.href='find'">ID/PW 찾기</button>        
+	        <button id="btn-signup" type="button" onclick="location.href='join'">회원가입</button>
+	      </form>
 		</div>
 	</div>
 
