@@ -1,4 +1,4 @@
-package com.itwill.domain;
+package com.itwill.domain; 
 
 import java.security.Timestamp;
 
