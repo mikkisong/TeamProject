@@ -1,16 +1,16 @@
 package com.itwill.domain;
 
 public class AirlineBean {
-	int index; // 항공권 구분 번호 
-	String member_id; // 예매자 ID 
-	String trip; // 여행지 -   편도 ) 서울-홍콩 /  왕복 ) 서울-홍콩 / 			    다구간 ) 서울-홍콩/홍콩-베이징/베이징-서울
-	String date; // 비행날짜 - 편도 ) 20190901 / 왕복 ) 20190901-20190905 / 다구간 ) 20190901-20190903-20190905
-	String time; // 비행시간 - 편도 ) 0935-1050 / 왕복 ) 0935-1050/1500-1635 / 다구간 ) 0935-1050/1500-1635/1200-1300
-	String count; // 인원 수 - 성인 1, 아동 1, 유아 1 -> 1/1/1
-	String comp; // 좌석 등급 - Y (일반석) C (비즈니스석) F (일등석)
-	String airline; // 항공사 - 대한항공, 아시아나항공
-	int fare; // 가격 
-	String reservation; // 예매하기 클릭 시 이동할 url 주소
+	private int index; // 항공권 구분 번호 
+	private String member_id; // 예매자 ID 
+	private String trip; // 여행지 -   편도 ) 서울-홍콩 /  왕복 ) 서울-홍콩 / 			    다구간 ) 서울-홍콩/홍콩-베이징/베이징-서울
+	private String date; // 비행날짜 - 편도 ) 20190901 / 왕복 ) 20190901-20190905 / 다구간 ) 20190901-20190903-20190905
+	private String time; // 비행시간 - 편도 ) 0935-1050 / 왕복 ) 0935-1050/1500-1635 / 다구간 ) 0935-1050/1500-1635/1200-1300
+	private String count; // 인원 수 - 성인 1, 아동 1, 유아 1 -> 1/1/1
+	private String comp; // 좌석 등급 - Y (일반석) C (비즈니스석) F (일등석)
+	private String airline; // 항공사 - 대한항공, 아시아나항공
+	private int fare; // 가격 
+	private String reservation; // 예매하기 클릭 시 이동할 url 주소
 	
 	public int getIndex() {
 		return index;
