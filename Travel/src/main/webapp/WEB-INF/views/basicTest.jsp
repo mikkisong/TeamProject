@@ -11,7 +11,14 @@
 
 $(document).ready(function() {
 	//alert("aaa");
-	Ajax("", "", "");
+	Ajax("", function (pResult){
+		console.log(pResult);
+	}, false);
+	
+	
+	 //Common.LoadCommonCode($("#spGroupCode"), params, false, function (pResult) {
+    //    $("select[id$=ddlGroupCode]").prop("disabled", true);
+    //});
 });
 </script>
 </head>
