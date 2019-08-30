@@ -16,6 +16,14 @@ public class boardController {
 
 		return "team_project/index";
 	}
+	
+	// http://localhost:8080/myapp/index2
+	@RequestMapping(value = "/index2", method = RequestMethod.GET)
+	public String index2(HttpSession session) {
+		System.out.println("/MemberController GET index() ");
+
+		return "team_project/index2";
+	}
 
 	// http://localhost:8080/myapp/board
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
@@ -47,5 +55,13 @@ public class boardController {
 		System.out.println("/MemberController GET login() ");
 
 		return "team_project/member/loginForm";
+	}
+	
+	// http://localhost:8080/myapp/flight	
+	@RequestMapping(value = "/flight", method = RequestMethod.GET)
+	public String flight(HttpSession session) {
+		System.out.println("/MemberController GET flight() ");
+
+		return "team_project/flight/flightsearch";
 	}
 }

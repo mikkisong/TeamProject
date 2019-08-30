@@ -1,12 +1,13 @@
-.booking-form {
+/* /* .booking-form { */
     padding: 35px 70px 51px 70px;
 }
-.header {
+
+.form-group {
     @extend display-flex;
     @include align-items(center);
     @include justify-content(space-between);
-    padding: 50px 57px;
 }
+
 input {
     border : none;
     background: #fff;
@@ -34,6 +35,7 @@ input {
 		color: $grey-light;
 	}
 }
+
 .submit {
     background: $yellow-color;
     color: #fff;
@@ -52,13 +54,11 @@ label {
     display: block;
 }
 
-#quantity {
-    color: $grey-light;
-}
-.form-group {
-    @extend display-flex;
-    @include align-items(center);
-    @include justify-content(space-between);
+.booking-formwrap {
+    width: 960px;
+    background: rgba(11,13,24, 0.6);
+    margin: 265px auto;
+    @include border-radius(10px);
 }
 .form-destination {
     width: 230px;
@@ -101,4 +101,4 @@ label {
     border: none;
     outline: none;
     cursor: pointer;
-}
+} */
