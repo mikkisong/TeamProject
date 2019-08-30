@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Handles requests for the application home page.
@@ -34,6 +35,17 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
+	}
+	
+	@RequestMapping(value = "ajaxProc", method = RequestMethod.POST)
+	@ResponseBody
+	public String ajaxProc(Locale locale, Model model) {
+		System.out.println("ajaxProc");
+		String returnValue="";
+		returnValue += "<select id='ddl' >";
+        returnValue += "<option value='KOR'>대한민국</option>";
+        returnValue += "</select>";
+		return returnValue;
 	}
 	
 }
