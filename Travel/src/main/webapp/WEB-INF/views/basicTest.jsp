@@ -11,10 +11,18 @@
 
 $(document).ready(function() {
 	//alert("aaa");
-	Ajax("", function (pResult){
+	
+	
+	Ajax("CT", function (pResult){
+		$("#ssss");
 		console.log(pResult);
 	}, false);
 	
+	
+	
+	console.log($("#ssss"));
+	
+	LoadCommonCode($("#ssss"), null)
 	
 	 //Common.LoadCommonCode($("#spGroupCode"), params, false, function (pResult) {
     //    $("select[id$=ddlGroupCode]").prop("disabled", true);
@@ -23,7 +31,8 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<select id="selCountry">
+<select id="selCountry" name="ssss">
+
 </select> 
 
 
