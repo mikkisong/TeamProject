@@ -36,6 +36,10 @@ public class HomeController {
 		
 		return "home";
 	}
+	@RequestMapping(value = "basicTest", method = RequestMethod.GET)
+	public String basicTest(Locale locale, Model model) {
+		return "basicTest";
+	}
 	
 	@RequestMapping(value = "ajaxProc", method = RequestMethod.POST)
 	@ResponseBody
