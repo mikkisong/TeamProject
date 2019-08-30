@@ -20,7 +20,7 @@ public class boardController {
 	// http://localhost:8080/myapp/index2
 	@RequestMapping(value = "/index2", method = RequestMethod.GET)
 	public String index2(HttpSession session) {
-		System.out.println("/MemberController GET index() ");
+		System.out.println("/MemberController GET index2() ");
 
 		return "team_project/index2";
 	}

@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta charset="utf-8">
@@ -18,16 +17,20 @@
 <!-- <link href="./resources/assets/css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- <link href="./resources/assets/css/main.scss" rel="stylesheet"> -->
 
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="./resources/assets/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="./resources/assets/css/jquery-ui.min.css">
+<!-- Font Icon -->
+<link rel="stylesheet" href="./resources/assets/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="./resources/assets/css/jquery-ui.min.css">
 
 <!-- Main css -->
 <link rel="stylesheet" href="./resources/assets/css/index_style.css">
 
 <script src="./resources/jquery-3.4.1.js"></script>
 
-
+<style type="text/css">
+.sitename {
+color:black;
+}
+</style>
 </head>
 
 <body>
@@ -40,7 +43,7 @@
 
 					<div class="main_title_content">
 						<h1 class="sitename">위트래블</h1>
-						<p class="sitename2" >최저가 항공권 예약, 동행자 찾기</p>
+						<p class="sitename" >최저가 항공권 예약, 동행자 찾기</p>
 					</div>
         <div class="container">
        				 
@@ -96,7 +99,7 @@
 <!-- 	<script src="./resources/assets/jquery/jquery.slim.min.js"></script> -->
 <!-- 	<script src="./resources/assets/js/bootstrap.bundle.min.js"></script> -->
 	
-	    <!-- JS -->
+	<!-- JS -->
     <script src="./resources/assets/js/jquery.min.js"></script>
     <script src="./resources/assets/js/jquery-ui.min.js"></script>
     <script src="./resources/assets/js/index_main.js"></script>
