@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-이상해꺼저!!!!!!
-ㄹㄴㅁㄹㄴㅁㅇㄻㄹㄴㅁㅁㄴㄻㄴㄹㅇㄻㄴ
+커밋을 한다!!
 
 </body>
 </html>
