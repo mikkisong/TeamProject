@@ -13,16 +13,26 @@ $(document).ready(function() {
 	//alert("aaa");
 	
 	
-	Ajax("CT", function (pResult){
-		$("#ssss");
-		console.log(pResult);
-	}, false);
+// 	Ajax("CT", function (pResult){
+// 		$("#ssss");
+// 		console.log(pResult);
+// 	}, false);
 	
 	
 	
+	//console.log($("#ssss"));
+	
+	var params = {};
+	params["control_type"] ="select";
+	params["first_item_type"]="select";
+	//params["code"]="CO";
+	params["code_div"]="CO";
+	params["control_id"]="ddlid";
+	params["type"]="code";
+	LoadCommonCode($("#ssss"), params,false)
+	
+	console.log("로드이후");
 	console.log($("#ssss"));
-	
-	LoadCommonCode($("#ssss"), null)
 	
 	 //Common.LoadCommonCode($("#spGroupCode"), params, false, function (pResult) {
     //    $("select[id$=ddlGroupCode]").prop("disabled", true);
@@ -31,9 +41,9 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<select id="selCountry" name="ssss">
+<span id="ssss" name="ssss">
 
-</select> 
+</span> 
 
 
 
