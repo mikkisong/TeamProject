@@ -1,7 +1,9 @@
 ////  CommonCode - Start  
 var LoadCommonCode = function (pTargetControl, pParams, pAsync, pCallBackFunction) {
-	console.log("LoadCommonCode");
-	console.log(pTargetControl);
+//	console.log("LoadCommonCode");
+//	console.log(pTargetControl);
+//	console.log(pParams);
+//	console.log(JSON.stringify(pParams));
 	
     if (pTargetControl != null) {
         ClearCommonCode(pTargetControl);
@@ -12,24 +14,26 @@ var LoadCommonCode = function (pTargetControl, pParams, pAsync, pCallBackFunctio
     $.ajax({
         method: 'POST'
         //, url: "/Ajax/AjaxCommonCode.aspx"
-    	, url: "ajaxProc"
+    	, url: "ajaxCodeProc"
         , data: JSON.stringify(pParams)
         , contentType: 'application/json; charset=utf-8'
-        //, dataType: 'json'
-    	, dataType: 'text'
+        , dataType: 'json'
+    	//, dataType: 'text'
         , async: pAsync
         , success: function (res) {
             ////if (console) //console.log("RESULT - " + JSON.stringify(res));
-        	console.log($(pTargetControl));
+        	//console.log($(pTargetControl));
+        	//console.log(res);
+        	//console.log("res : " + res.data);
         	
             if (pTargetControl != null) {
                 $(pTargetControl).empty();
-                $(pTargetControl).append(res.DATA);
+                $(pTargetControl).append(res.data);
             } else {
 
             }
             if (pCallBackFunction) {
-                pCallBackFunction(res.DATA);
+                pCallBackFunction(res.data);
             } else {
 
             }
