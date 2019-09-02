@@ -96,20 +96,20 @@ color: #FFF;
                 <div class="form-group">
                 <div class="form-destination">
                         <label for="destination">출발지</label>
-                        <input type="text" id="from" name="from" placeholder="예) 부산" />
+                        <input type="text" id="dep" name="dep" placeholder="예) 부산" />
                     </div>
                     <div class="form-destination">
                         <label for="destination">도착지</label>
-                        <input type="text" id="destination" name="destination" placeholder="예) 하와이" />
+                        <input type="text" id="arr" name="arr" placeholder="예) 하와이" />
                     </div>
                     <div class="form-date-from form-icon">
                         <label for="date_from">가는날</label>
-                        <input type="text" id="date_from" class="date_from" placeholder="Pick a date" />
+                        <input type="text" id="date_dep" name="date_dep" class="date_from" placeholder="Pick a date" />
                         <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
                     </div>
                     <div class="form-date-to form-icon">
                         <label for="date_to">오는날</label>
-                        <input type="text" id="date_to" class="date_to" placeholder="Pick a date" />
+                        <input type="text" id="date_arr" name="date_arr" class="date_to" placeholder="Pick a date" />
                         <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
                     </div>
                     <div class="form-quantity">

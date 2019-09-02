@@ -10,7 +10,6 @@ public class AirlineBean {
 	private String comp; // 좌석 등급 - Y (일반석) C (비즈니스석) F (일등석)
 	private String airline; // 항공사 - 대한항공, 아시아나항공
 	private int fare; // 가격 
-	private String reservation; // 예매하기 클릭 시 이동할 url 주소
 	
 	public int getIndex() {
 		return index;
@@ -65,12 +64,6 @@ public class AirlineBean {
 	}
 	public void setFare(int fare) {
 		this.fare = fare;
-	}
-	public String getReservation() {
-		return reservation;
-	}
-	public void setReservation(String reservation) {
-		this.reservation = reservation;
 	}
 	
 	

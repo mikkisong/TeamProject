@@ -27,6 +27,21 @@
 	<jsp:include page="../inc/top.jsp" />
 	<!-- 헤더가 들어가는 곳 -->
 
+	<h1>최저가 항공권 결과</h1>
+	
+	<table border="1px solid #fff">
+		<tr>
+			<td>여행지</td><td>비행날짜</td><td>비행시간</td><td>인원수</td><td>좌석 등급</td><td>항공사</td><td>가격</td>
+		</tr>
+		<c:forEach var="bean" items="${list }">
+		<tr>
+			<td>${bean.trip }</td><td>${bean.date }</td><td>${bean.time }</td><td>${bean.count }</td><td>${bean.comp }</td><td>${bean.airline }</td><td>${bean.fare }</td>
+		</tr>
+		</c:forEach>
+	</table>
+	
+
+
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="resources/assets/jquery/jquery.slim.min.js"></script>
