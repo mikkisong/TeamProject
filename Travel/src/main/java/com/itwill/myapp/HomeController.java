@@ -81,7 +81,6 @@ public class HomeController {
 		String returnValue ="";
 //		code.setCode("KOR");
 //		code.setCode_div("CO");
-//		
 //		code.setUse_yn("Y");
 //		code.setCode_step(1);
 		
