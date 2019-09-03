@@ -62,59 +62,13 @@ public class HomeController {
 	@RequestMapping(value = "ajaxCodeProc", method = RequestMethod.POST)
 	@ResponseBody
 	public String ajaxCodeProc(ScdCodeBean code, @RequestBody String paramData) {
-		
-		//System.out.println("pParams : " +request.getAttribute("CODE"));
-		
-		//String json = parameters.get("list").toString();
-		
-		//System.out.println(params.get("CONTROL_TYPE"));
-
-		//ObjectMapper mapper = new ObjectMapper();
-		//List<Map<String, Object>> list = mapper.readValue(json, new TypeReference<ArrayList<Map<String, Object>>>(){});
-		
-		
-//		System.out.println("paramData : " +  paramData);
-//		
-//		
-//		
-//		System.out.println("ajaxCodeProc");
 		String returnValue ="";
-//		code.setCode("KOR");
-//		code.setCode_div("CO");
-//		code.setUse_yn("Y");
-//		code.setCode_step(1);
-		
-		//System.out.println("HomeController ajaxCodeProc");
-		
+		System.out.println("paramData : " + paramData);
 		try {
 			returnValue = util.getCode(paramData);
 		} catch (JsonProcessingException e) {
 			System.out.println(e.getMessage());
 		}
-		
-//		String returnValue="";
-//		returnValue += "<select id='ddl' >";
-//        returnValue += "<option value='KOR'>대한민국</option>";
-//        returnValue += "</select>";
-//        
-//        
-//        //date da = new 
-//        
-//       // jsonData data = new jsonData();
-//        
-//        //data.setName("DATA");
-//        //data.setData(returnValue);
-//        
-//        ObjectMapper mapper = new ObjectMapper();
-        //JSONPObject json = new JSONPObject("JSON.parse", returnValue);
-
-       //String jsonStr = mapper.writeValueAsString(data);
-
-
-
-        //System.out.println(jsonStr);
-        
-        
 		return returnValue;
 	}
 	

@@ -10,18 +10,7 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	//alert("aaa");
-	
-	
-// 	Ajax("CT", function (pResult){
-// 		$("#ssss");
-// 		console.log(pResult);
-// 	}, false);
-	
-	
-	
-	//console.log($("#ssss"));
-	
+
 	var params = {};
 	params["control_type"] ="select";
 	params["first_item_type"]="select";
@@ -51,6 +40,18 @@ $(document).ready(function() {
 	params["control_id"]="chid";
 	params["type"]="code";
 	LoadCommonCode($("#spch"), params,false)
+	
+	
+	var params = {};
+	params["control_type"] ="select";
+	params["first_item_type"]="select";
+	//params["code"]="CO";
+	params["code_div"]="CT";
+	params["use_method1"]="KOR";
+	//params["code_div"]="KOR";
+	params["control_id"]="ddlid2";
+	params["type"]="code";
+	LoadCommonCode($("#ssss1"), params,false)
 
 });
 </script>
@@ -58,8 +59,16 @@ $(document).ready(function() {
 <body>
 <span id="ssss" name="ssss">
 
-</span> 
+</span>
+
+
+<span id="ssss1" name="ssss1">
+
+</span>
+  
 <br>
+
+<select id='ddlid2' ><option value=''>선택</option><option value='SEL'>서울(인천+김포)</option><option value='ICN'>인천</option><option value='GMP'>김포</option><option value='PUS'>부산</option><option value='TAE'>대구</option><option value='CJU'>제주</option><option value='MWX'>무안</option><option value='YNY'>양양</option><option value='CJJ'>청주</option></select>
 
 
 <span id="spra" name="spra">
