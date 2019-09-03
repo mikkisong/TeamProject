@@ -47,7 +47,7 @@ public class UtilServiceImpl implements UtilService {
 		JsonDataBean json = new JsonDataBean();
 		
 		// 공퉁 부분이라서 param 값을 가지고 사용항 Bean 객체를 항당 하여  List<Object> 형태로 리턴 받음 
-		List<Map<String, Object>> list = setData(paramData);
+		List<Object> list = setData(paramData);
 		
 		// 데이터를 가공함
 		String jsonStr = getData(list);
@@ -62,7 +62,7 @@ public class UtilServiceImpl implements UtilService {
 	}
 	
 	// param를 받아서 변수 활당 및 실제 데이터를 List<Map<String, Object>> 형식으로 리턴
-	public List<Map<String, Object>> setData(String paramData) {
+	public List<Object> setData(String paramData) {
 		//System.out.println("Object setData paramData : " + paramData);
 		
 		// paramData 데이터를 Map 형식으로 리턴
@@ -92,7 +92,8 @@ public class UtilServiceImpl implements UtilService {
 			}
 			code.setUse_yn("Y");
 			code.setCode_step(1);
-			List<Map<String, Object>> list = scddao.getCode(code);
+			List<Object> list = scddao.getCodeObject(code);
+			
 			return list;
 		}
 		else {
@@ -118,7 +119,7 @@ public class UtilServiceImpl implements UtilService {
 	}
 	
 	// 가져온 데이터를 상황에 맞도록 제 해석 하여 리턴
-	public String getData(List<Map<String, Object>> list) {
+	public String getData(List<Object> list) {
 		String returnValue = "";
 		int iControlCount=0;
 		switch (control_type) {
@@ -133,42 +134,43 @@ public class UtilServiceImpl implements UtilService {
                 returnValue += "<option value=''>전체</option>";
             }
             //실제 데이터 바인딩
-            if(bean_type.equals("code"))
-            {
-            	for(Object obj : list) {
-					ScdCodeBean scd = (ScdCodeBean) obj;
+        	for(Object obj : list) {
+        		if(bean_type.equals("code"))
+                {
+        			ScdCodeBean scd = (ScdCodeBean) obj;
 					returnValue += "<option value='"+scd.getCode()+"'>"+scd.getCode_name()+"</option>";
-				}
-            }
+                }
+			}
             returnValue += "</select>";
 			break;
 		case "radio":
             //실제 데이터 바인딩
-            if(bean_type.equals("code"))
-            {
-            	for(Object obj : list) {
+			for(Object obj : list) {
+				if(bean_type.equals("code"))
+	            {
 					ScdCodeBean scd = (ScdCodeBean) obj;
 					returnValue += "<input type='radio' id='"+control_id+iControlCount+"' name='"+control_id+"' value='"+scd.getCode()+"' class='margin-right-0' />"
 							+ "<label for='"+control_id+iControlCount+"' class='margin-right-5'>"+scd.getCode_name()+"</label>";
-                        iControlCount++;
-				}
-            }
+	            }
+                iControlCount++;
+			}
+            
 			break;
 		 case "check":
 			//실제 데이터 바인딩
-            if(bean_type.equals("code"))
-            {
-            	for(Object obj : list) {
+			 for(Object obj : list) {
+				 if(bean_type.equals("code"))
+				 {
 					ScdCodeBean scd = (ScdCodeBean) obj;
 					returnValue += "<input type='checkbox' id='"+control_id+iControlCount+"' name='"+control_id+"' value='"+scd.getCode()+"' />&nbsp;<label for='"+control_id+iControlCount+"'>"+scd.getCode_name()+"</label>&nbsp;&nbsp;";
-                        iControlCount++;
-				}
-            }
+				 }
+                 iControlCount++;
+			 }
+            
             break;
 		default:
 			break;
 		}
-		
 		return returnValue;
 	}
 }
