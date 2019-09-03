@@ -59,17 +59,18 @@ $(document).ready(function() {
 <span id="ssss" name="ssss">
 
 </span> 
+<br>
 
 
 <span id="spra" name="spra">
 
 </span>
-
+<br>
 <span id="spch" name="spch">
 
 </span>
 
-
+<br>
 
 </body>
 </html>
