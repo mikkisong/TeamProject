@@ -24,12 +24,9 @@ public class AirlineDAOImpl implements AirlineDAO {
 		String a="";
 		try{
 			a=sqlSession.selectOne(namespace+".getCode",city);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("애러 : "  + e.getMessage());
 		}
-		
-		
 		return a;
 	}
 	

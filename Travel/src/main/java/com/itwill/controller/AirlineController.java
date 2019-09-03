@@ -27,17 +27,16 @@ public class AirlineController {
 	public String flight(HttpSession session, HttpServletRequest request, Model model, FlightSearchBean bean) {
 		System.out.println("/MemberController GET flight() ");
 
-		System.out.println(bean.getDep());
-		System.out.println(bean.getArr());
-		
 		String code_dep = service.getCode(bean.getDep());
 		String code_arr = service.getCode(bean.getArr());
 		
+		bean.setTrip("RT");
 		bean.setCode_dep(code_dep);
 		bean.setCode_arr(code_arr);
+		bean.setComp("Y");
 		
-//		List<AirlineBean> flightSearchList = service.flightSearch(bean);
-//		model.addAttribute("flightSearchList", flightSearchList);
+		List<AirlineBean> flightSearchList = service.flightSearch(bean);
+		model.addAttribute("flightSearchList", flightSearchList);
 		
 		return "team_project/flight/flightsearch";
 	}
