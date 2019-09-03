@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -164,13 +165,13 @@
 							<div id="flight" class="tab-pane fade in active">
 								
 <!-- 항공권 검색 박스 -->								
-								<form method="post" class="colorlib-form">
+							<form action='<c:url value="/flight"/>' id="booking-form" method="GET" class="colorlib-form">
 				              	<div class="row">
 				              	 <div class="col-md-3">
 				              	 	<div class="form-group">
 				                    <label for="date">출발지:</label>
 				                    <div class="form-field">
-				                      <input type="text" id="location" class="form-control" placeholder="Search Location">
+				                      <input type="text" id="location" name="cityfrom" class="form-control" placeholder="예) 부산">
 				                    </div>
 				                  </div>
 				              	 </div>
@@ -178,7 +179,7 @@
 				              	 	<div class="form-group">
 				                    <label for="date">도착지:</label>
 				                    <div class="form-field">
-				                      <input type="text" id="location" class="form-control" placeholder="Search Location">
+				                      <input type="text" id="location" class="form-control" name="cityto" placeholder="예) 하와이">
 				                    </div>
 				                  </div>
 				              	 </div>
@@ -187,7 +188,7 @@
 				                    <label for="date">출발일:</label>
 				                    <div class="form-field">
 				                      <i class="icon icon-calendar2"></i>
-				                      <input type="text" id="date" class="form-control date" placeholder="Check-in date">
+				                      <input type="text" id="date" class="form-control date" name="datefrom">
 				                    </div>
 				                  </div>
 				                </div>
@@ -196,7 +197,15 @@
 				                    <label for="date">도착일:</label>
 				                    <div class="form-field">
 				                      <i class="icon icon-calendar2"></i>
-				                      <input type="text" id="date" class="form-control date" placeholder="Check-out date">
+				                      <input type="text" id="date" class="form-control date" name="dateto">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-2">
+				                  <div class="form-group">
+				                    <label for="adultquantity">인원:</label>
+				                    <div class="form-field">
+				                      <input type="number" id="quantity" value="1" min="0" class="form-control" name="adultquantity">
 				                    </div>
 				                  </div>
 				                </div>
@@ -214,7 +223,7 @@
 				                  </div>
 				                </div>
 				                <div class="col-md-2">
-				                  <input type="submit" name="submit" id="submit" value="Find Flights" class="btn btn-primary btn-block">
+				                  <input type="submit" name="submit" id="submit" value="예매하기" class="btn btn-primary btn-block">
 				                </div>
 				              </div>
 				            </form>

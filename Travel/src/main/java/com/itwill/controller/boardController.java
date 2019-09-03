@@ -64,6 +64,14 @@ public class boardController {
 		return "team_project/member/loginForm";
 	}
 	
+	// http://localhost:8080/myapp/tourindex
+	@RequestMapping(value = "/tourindex", method = RequestMethod.GET)
+	public String tourindex(HttpSession session) {
+		System.out.println("/MemberController GET tourindex() ");
+
+		return "team_project/tour/index";
+	}
+	
 //	// http://localhost:8080/myapp/flight	
 //	@RequestMapping(value = "/flight", method = RequestMethod.GET)
 //	public String flight(HttpSession session) {
