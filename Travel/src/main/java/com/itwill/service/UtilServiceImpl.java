@@ -149,7 +149,7 @@ public class UtilServiceImpl implements UtilService {
             	for(Object obj : list) {
 					ScdCodeBean scd = (ScdCodeBean) obj;
 					returnValue += "<input type='radio' id='"+control_id+iControlCount+"' name='"+control_id+"' value='"+scd.getCode()+"' class='margin-right-0' />"
-							+ "<label for='"+control_id+"' class='margin-right-5'>"+scd.getCode_name()+"</label>";
+							+ "<label for='"+control_id+iControlCount+"' class='margin-right-5'>"+scd.getCode_name()+"</label>";
                         iControlCount++;
 				}
             }
@@ -160,7 +160,7 @@ public class UtilServiceImpl implements UtilService {
             {
             	for(Object obj : list) {
 					ScdCodeBean scd = (ScdCodeBean) obj;
-					returnValue += "<input type='checkbox' id='"+control_id+iControlCount+"' name='"+control_id+"' value='"+scd.getCode()+"' />&nbsp;<label for='"+control_id+"'>"+scd.getCode_name()+"</label>&nbsp;&nbsp;";
+					returnValue += "<input type='checkbox' id='"+control_id+iControlCount+"' name='"+control_id+"' value='"+scd.getCode()+"' />&nbsp;<label for='"+control_id+iControlCount+"'>"+scd.getCode_name()+"</label>&nbsp;&nbsp;";
                         iControlCount++;
 				}
             }
