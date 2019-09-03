@@ -90,6 +90,9 @@ public class UtilServiceImpl implements UtilService {
 			if(map.get("code_div")!=null) {
 				code.setCode_div(map.get("code_div").toString());
 			}
+			if(map.get("use_method1")!=null) {
+				code.setUse_method1(map.get("use_method1").toString());
+			}
 			code.setUse_yn("Y");
 			code.setCode_step(1);
 			List<Object> list = scddao.getCodeObject(code);
