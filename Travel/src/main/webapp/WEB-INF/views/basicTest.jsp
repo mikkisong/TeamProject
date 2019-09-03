@@ -31,12 +31,27 @@ $(document).ready(function() {
 	params["type"]="code";
 	LoadCommonCode($("#ssss"), params,false)
 	
-	console.log("로드이후");
-	console.log($("#ssss"));
 	
-	 //Common.LoadCommonCode($("#spGroupCode"), params, false, function (pResult) {
-    //    $("select[id$=ddlGroupCode]").prop("disabled", true);
-    //});
+	
+	var params = {};
+	params["control_type"] ="radio";
+	params["first_item_type"]="select";
+	//params["code"]="CO";
+	params["code_div"]="CO";
+	params["control_id"]="radid";
+	params["type"]="code";
+	LoadCommonCode($("#spra"), params,false)
+	
+	
+	var params = {};
+	params["control_type"] ="check";
+	params["first_item_type"]="select";
+	//params["code"]="CO";
+	params["code_div"]="CO";
+	params["control_id"]="chid";
+	params["type"]="code";
+	LoadCommonCode($("#spch"), params,false)
+
 });
 </script>
 </head>
@@ -44,6 +59,15 @@ $(document).ready(function() {
 <span id="ssss" name="ssss">
 
 </span> 
+
+
+<span id="spra" name="spra">
+
+</span>
+
+<span id="spch" name="spch">
+
+</span>
 
 
 
