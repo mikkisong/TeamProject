@@ -11,15 +11,16 @@
 <h2>게시판 글쓰기</h2>
 <form action='<c:url value="/board/write"/>' method="post">
 <table border="1">
-<tr><td><b>(공지)제목</b></td><td><input type="text" name="subject"></td></tr>
+
+<select name="notice">
+	<option value="nomal">일반</option>
+	<option value="notice">공지</option>
+</select>
+<tr><td>제목</td><td><input type="text" name="subject"></td></tr>
 <tr><td>글내용</td>
-<td><textarea name="content" rows="10" cols="20"></textarea></td></tr>
+<td><textarea name="content" rows="10" cols="20">이 부분에 에디터 들여올 예정</textarea></td></tr>
 <tr><td colspan="2"><input type="submit" value="글쓰기"></td></tr>
 </table>
 </form>
 </body>
 </html>
-
-
-
-
