@@ -32,6 +32,13 @@ public class boardController {
 
 		return "team_project/board";
 	}
+	// http://localhost:8080/myapp/board
+		@RequestMapping(value = "/write", method = RequestMethod.GET)
+		public String write(HttpSession session) {
+			System.out.println("/MemberController GET write() ");
+
+			return "team_project/writeForm";
+		}
 
 	// http://localhost:8080/myapp/community
 	@RequestMapping(value = "/community", method = RequestMethod.GET)
