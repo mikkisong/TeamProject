@@ -1,6 +1,8 @@
 package com.itwill.domain;
 
 public class FlightSearchBean {
+	
+	private String trip; // 왕복RT/ 편도OW/ 다구간MD
 	private String dep;// 출발지
 	private String arr; // 도착지
 	private String code_dep; // 출발지 코드
@@ -10,10 +12,14 @@ public class FlightSearchBean {
 	private String adultquantity; // 어른
 	private String childquantity; // 아이
 	private String babyquantity; // 유아
-	private String comp; // 좌석
+	private String comp; // 일반석Y/ 비즈니스석C/ 일등석F
 	
-	
-	
+	public String getTrip() {
+		return trip;
+	}
+	public void setTrip(String trip) {
+		this.trip = trip;
+	}
 	public String getDep() {
 		return dep;
 	}

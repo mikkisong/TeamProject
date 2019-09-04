@@ -6,7 +6,19 @@
 	<select id="getCode" resultType="java.lang.String">
 		select code from scd_code where code_name=#{city}
 	</select>
+	<select id="getNum" resultType="java.lang.Integer">
+		select max(index) from air_booking_history
+	</select>
+	<insert id="insert">
+		insert into air_booking_history(index, member_id, trip, date, time, count, comp, airline, fare) 
+		values (#{index}, #{member_id}, #{trip}, #{date}, #{time}, #{count}, #{comp}, #{airline}, #{fare})
+	</insert>
 	
-	
+	<select id="list" resultType="com.itwill.domain.AirlineBean">
+		select * from air_booking_history where member_id=#{member_id}
+	</select>
+	<insert id="cancel">
+		delete from air_booking_history where index=#{index}
+	</insert>
 </mapper> 
 

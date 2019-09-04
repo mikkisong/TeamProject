@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 
+import org.jsoup.Connection;
 import org.jsoup.Connection.Method;
 import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
@@ -33,54 +34,48 @@ public class AirlineServiceImpl implements AirlineService {
 		List<AirlineBean> flightSearchList = new ArrayList<AirlineBean>(); 
 		
 		String url = "http://airbooking.ttang.com/booking/newBkRealTimeSearchCar.lts";
-		String Cookie = "";
-		String Referer = "";
+		String Cookie = "_ga=GA1.2.201665897.1563859509; _fbp=fb.1.1563859508760.1886791602; _gid=GA1.2.442915978.1567386844; _gat=1; ";
 		
 		try {
-			Response res = (Response)Jsoup.connect("http://www.ttang.com/index.do")
-					.referrer("http://www.ttang.com/index.do")
-					.userAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36")
-					.timeout(0)
-					.method(Method.POST)
-					.execute(); 
 			
-			Map<String, String> cookies = res.cookies();
-			Iterator<String> mapIter = cookies.keySet().iterator();
-	 
-			while(true) {
-        		String key = mapIter.next();
-        		String value = cookies.get(key);
- 
-        		Cookie = Cookie + key + "=" + value;
+//			Response res = (Response)Jsoup.connect("http://www.ttang.com")
+//					.method(Method.POST)
+//					.execute(); 
+//			
+//			Map<String, String> cookies = res.cookies();
+//	 
+//			System.out.println(cookies);
 
-        		if(!mapIter.hasNext()) {
-        			break;
-        		} else {
-        			Cookie = Cookie + "; ";
-        		}
-        	}
+			Connection.Response res = Jsoup.connect(url)
+						.method(Method.POST)
+						.execute();
+
+			Map<String, String> cookies = res.cookies();
+			for(int i = 0; i < cookies.size(); i++) {
+				Cookie = Cookie + "JSESSIONID=" + cookies.get("JSESSIONID");
+			}
 			
-			// referer 받는 법 추가 해야함
+			
+//			Cookie = Cookie + cookies2.ge
 			
 			
 			Document doc = Jsoup.connect(url)
-			         .header("Accept","application/xml, text/xml, */*; q=0.01")
+//			         .header("Accept","application/xml, text/xml, */*; q=0.01")
 			         .header("Accept-Encoding","gzip, deflate")
 			         .header("Accept-Language","ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7")
-			         .header("Cache-Control","no-cache")
+//			         .header("Cache-Control","no-cache")
 			         .header("Connection","keep-alive")
 			         .header("Content-Length","361")
 			         .header("Content-Type","application/x-www-form-urlencoded; charset=UTF-8")
 			         .header("Cookie",Cookie)
 			         .header("Host","airbooking.ttang.com")
-			         .header("Origin","http://airbooking.ttang.com")
-			         .header("Pragma","no-cache")
-			         .header("Referer","http://airbooking.ttang.com/booking/newBkRealTimeSearchCar.lts")
-			         .header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36")
-			         .header("X-Requested-With","XMLHttpRequest")
+//			         .header("Origin","http://airbooking.ttang.com")
+//			         .header("Referer","http://airbooking.ttang.com/booking/newBkRealTimeSearchCar.lts?md_seg=3&chd=0&availCheckIn=20190907&charset=euc-kr&adt=1&url=http%3A%2F%2Fairbooking.ttang.com%2Fbooking%2FnewBkRealTimeSearchCar.lts&arr2=&arr1=&depdate2=&arr0=HKG&txt_arr2=&startlocal=Y&txt_arr1=&depdate1=&txt_arr0=%C8%AB%C4%E1&depdate0=20190909&inf=0&open=N&trip=RT&dep2=&dep1=&comp=Y&dep0=PUS&txt_dep2=&txt_dep1=&txt_dep0=%BA%CE%BB%EA&retdate=20190910")
+			         .header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36")
+//			         .header("X-Requested-With","XMLHttpRequest")
 			         .data("STEP","L")
 			         .data("startlocal","Y")
-			         .data("trip","RT")
+			         .data("trip",bean.getTrip())
 			         .data("adt",bean.getAdultquantity())
 			         .data("chd",bean.getChildquantity())
 			         .data("inf",bean.getBabyquantity())
@@ -119,6 +114,10 @@ public class AirlineServiceImpl implements AirlineService {
 					
 			Elements airlines = doc.select("CRD"); // 항공사
 			
+//          for (Element e : elements) {
+//              System.out.println(e.text());
+//          }
+			
 			Elements DSF = doc.select("DSF"); 
 			Elements FUEL = doc.select("FUEL"); 
 			Elements TAX = doc.select("TAX"); // DSF - FUEL + TAX = fare
@@ -131,18 +130,31 @@ public class AirlineServiceImpl implements AirlineService {
 			String time;
 			String count = bean.getAdultquantity() + "/" + bean.getChildquantity() + "/" + bean.getBabyquantity();
 			String comp = bean.getComp();
-			int fare;
+			int fare = 0;
+				
 			for(int i = 0; i < airlines.size(); i++) {
 				AirlineBean bean2 = new AirlineBean();
 				
 				bean2.setTrip(trip);
 				bean2.setDate(date);
-				time = DTime.get(i).toString() + "-" + ATime.get(i).toString();
+				String dTime = DTime.get(i).text();
+				String aTime = ATime.get(i).text();
+				
+				dTime = dTime.substring(dTime.length()-4, dTime.length());
+				aTime = aTime.substring(aTime.length()-4, aTime.length());
+				time = dTime + "-" + aTime;
+				
 				bean2.setTime(time);
 				bean2.setCount(count);
 				bean2.setComp(comp);
-				bean2.setAirline(airlines.get(i).toString());
-				fare = Integer.parseInt(DSF.get(i).toString()) - Integer.parseInt(FUEL.get(i).toString()) + Integer.parseInt(TAX.get(i).toString());
+				bean2.setAirline(airlines.get(i).text());
+				
+				String DSF_1 = DSF.get(i).text().split("/")[0];
+				double FUEL_1 = Double.parseDouble(FUEL.get(i).text());
+				double TAX_1 = Double.parseDouble(TAX.get(i).text());
+
+				fare = Integer.parseInt(DSF_1) - (int)FUEL_1 + (int)TAX_1;
+				
 				bean2.setFare(fare);
 				
 				flightSearchList.add(bean2);
@@ -161,7 +173,39 @@ public class AirlineServiceImpl implements AirlineService {
 	public String getCode(String city) {
 		System.out.println("AirlineServiceImpl getCode()");
 		
-		return dao.getCode(city);
+		String a="";
+		try{
+			a=dao.getCode(city);
+		} catch (Exception e) {
+			System.out.println("애러 : "  + e.getMessage());
+		}
+		
+		return a;
+	}
+
+	@Override
+	public int getMaxNum() {
+		int a = dao.getNum();
+		
+		return a;
+	}
+
+	@Override
+	public void insertAirBooking(AirlineBean airBooking) {
+		dao.insertAirBooking(airBooking);
+	}
+
+	@Override
+	public List<AirlineBean> getBookingList(String member_id) {
+		
+		List<AirlineBean> airBookingList = dao.getBookingList(member_id);
+		
+		return airBookingList;
+	}
+
+	@Override
+	public void cancel(int index) {
+		dao.cancel(index);
 	}
 	
 	

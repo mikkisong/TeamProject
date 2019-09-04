@@ -71,6 +71,40 @@
     <resultMap type="map" id="listScdCodeMap">
 
     </resultMap>
+    
+    <select id="select" resultMap="scdCodeBean" parameterType="java.util.Map">
+    	SELECT
+			*
+		FROM
+			scd_code
+		WHERE
+			1=1
+		<if test="code_div != null">
+ 	        AND code_div =  #{code_div}
+ 	    </if>
+ 	    <if test="code != null">
+ 	        AND code =  #{code}
+ 	    </if>
+ 	    <if test="code_name != null">
+ 	        AND code_name like % #{code_name} % 
+ 	    </if>
+ 	    <if test="use_method1 != null">
+ 	        AND use_method1 =  #{use_method1}
+ 	    </if>
+ 	    <if test="use_method2 != null">
+ 	        AND use_method2 =  #{use_method2}
+ 	    </if>
+ 	    <if test="use_method3 != null">
+ 	        AND use_method3 =  #{use_method3}
+ 	    </if>
+ 	    <if test="use_yn != null">
+ 	        AND use_yn =  #{use_yn}
+ 	    </if>
+ 	    
+ 	    ORDER BY order_seq ASC
+    </select>
+    
+    <resultMap id="scdCodeBean" type="com.itwill.domain.ScdCodeBean" />
 	
 	
 
