@@ -34,6 +34,7 @@ var LoadCommonCode = function (pTargetControl, pParams, pAsync, pCallBackFunctio
             }
             if (pCallBackFunction) {
                 pCallBackFunction(res.data);
+            	//pCallBackFunction(res);
             } else {
 
             }

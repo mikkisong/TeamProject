@@ -121,18 +121,57 @@ public class UtilServiceImpl implements UtilService {
 		return map;
 	}
 	
-	// 가져온 데이터를 상황에 맞도록 제 해석 하여 리턴
+	
+	// mpa 형식으로 json 형식으로 가공 후 리턴
+ 	public String getJson(Map<String, Object> map) {
+		String returnValue ="";
+		
+		try {
+			returnValue = mapper.writeValueAsString(map);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		return returnValue;
+	}
+ 	
+ 	// List<map<String, Object>> 형식을 json 형식으로 가공 후 리턴
+ 	public String getListMapJson(List<Map<String, Object>> list) {
+		String returnValue="{\"Table\":";
+		
+		try {
+			returnValue += mapper.writeValueAsString(list) + "}";
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		return returnValue;
+	}
+ 	
+ 	// List<Object>> 형식을 json 형식으로 가공 후 리턴
+  	public String getListJson(List<Object> list) {
+ 		String returnValue="{\"Table\":";
+ 		
+ 		try {
+ 			returnValue += mapper.writeValueAsString(list) + "}";
+ 		} catch (JsonProcessingException e) {
+ 			e.printStackTrace();
+ 		}
+ 		return returnValue;
+ 	}
+
+  	// 가져온 데이터를 상황에 맞도록 제 해석 하여 리턴
 	public String getData(List<Object> list) {
+		//System.out.println("getData(List<Object> list)");
+		//System.out.println("getListJson : " + getListJson(list));
 		String returnValue = "";
 		int iControlCount=0;
 		switch (control_type) {
 		case "select":
-			returnValue += "<select id='"+control_id+"' >";
+			returnValue += "<select id='"+control_id+" name="+control_id+"'>";
             if (first_item_type.equals("select"))
             {
                 returnValue += "<option value=''>선택</option>";
             }
-            else if (first_item_type.equals("ALL"))
+            else if (first_item_type.equals("all"))
             {
                 returnValue += "<option value=''>전체</option>";
             }
@@ -157,7 +196,6 @@ public class UtilServiceImpl implements UtilService {
 	            }
                 iControlCount++;
 			}
-            
 			break;
 		 case "check":
 			//실제 데이터 바인딩
@@ -169,9 +207,24 @@ public class UtilServiceImpl implements UtilService {
 				 }
                  iControlCount++;
 			 }
-            
             break;
+		 case"select2":
+			 Map<String, Object> map = new HashMap<String, Object>();
+			 List<Map<String,Object>> list3 = new ArrayList<Map<String,Object>>();
+			 for(Object obj : list) {
+				 if(bean_type.equals("code"))
+				 {
+					 ScdCodeBean scd = (ScdCodeBean) obj;
+					 map = new HashMap<String, Object>();
+					 map.put("VALUE", scd.getCode());
+					 map.put("TEXT", scd.getCode_name());
+					 list3.add(map);
+				 }
+			 }
+			 returnValue = getListMapJson(list3);
+			 break;
 		default:
+			returnValue = getListJson(list);
 			break;
 		}
 		return returnValue;
