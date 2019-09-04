@@ -8,5 +8,13 @@ public interface AirlineDAO {
 
 	String getCode(String city);
 
+	int getNum();
+
+	void insertAirBooking(AirlineBean airBooking);
+
+	List<AirlineBean> getBookingList(String member_id);
+
+	void cancel(int index);
+
 	
 }

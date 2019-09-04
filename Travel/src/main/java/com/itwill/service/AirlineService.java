@@ -11,4 +11,12 @@ public interface AirlineService {
 
 	String getCode(String dep);
 
+	int getMaxNum();
+
+	void insertAirBooking(AirlineBean airBooking);
+
+	List<AirlineBean> getBookingList(String member_id);
+
+	void cancel(int index);
+
 }

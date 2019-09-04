@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>최저가 항공권 결과</title>
+<title>예매내역 조회 페이지</title>
 
 <!-- Bootstrap core CSS -->
 <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -27,29 +27,26 @@
 	<jsp:include page="../inc/top.jsp" />
 	<!-- 헤더가 들어가는 곳 -->
 
-	<h1>최저가 항공권 결과</h1>
+	<h1>예매내역 조회 페이지</h1>
 	
-	정렬기능 추가 예정 - 가격순, 날짜순 <br>
-	검색기능 추가 예정 - 가격별, 날짜별, 항공사별
-
+	정렬기능 추가 예정 - 가격순, 날짜순
+	
 	<table border="1px solid #fff">
 		<tr>
-			<td>여행지</td><td>비행날짜</td><td>비행시간</td><td>인원수</td><td>좌석 등급</td><td>항공사</td><td>가격</td>
+			<td>예매번호</td><td>여행지</td><td>비행날짜</td><td>비행시간</td><td>인원수</td><td>좌석 등급</td><td>항공사</td><td>가격</td>
 		</tr>
-		<c:forEach var="bean" items="${flightSearchList }">
+		<c:forEach var="bean" items="${airBookingList }">
 		<tr>
-			<td>${bean.trip }</td><td>${bean.date }</td><td>${bean.time }</td><td>${bean.count }</td><td>${bean.comp }</td><td>${bean.airline }</td><td>${bean.fare }</td>
-			<td><a href='<c:url value="/airBooking?bean=${bean} }"/>'>예매하기</a></td>
+			<td>${bean.index }</td><td>${bean.trip }</td><td>${bean.date }</td><td>${bean.time }</td><td>${bean.count }</td><td>${bean.comp }</td><td>${bean.airline }</td><td>${bean.fare }</td>
+			<td><a href='<c:url value="/cancel?index=${bean.index} }"/>'>예매 취소 하기</a></td>
 		</tr>
 		</c:forEach>
 	</table>
 	
-
-
-
-	<!-- Bootstrap core JavaScript -->
+	
+		<!-- Bootstrap core JavaScript -->
 	<script src="resources/assets/jquery/jquery.slim.min.js"></script>
 	<script src="resources/assets/js/bootstrap.bundle.min.js"></script>
+	
 </body>
-
 </html>

@@ -47,8 +47,8 @@ public class AirlineServiceImpl implements AirlineService {
 //			System.out.println(cookies);
 
 			Connection.Response res = Jsoup.connect(url)
-				     .method(Method.POST)
-				     .execute();
+						.method(Method.POST)
+						.execute();
 
 			Map<String, String> cookies = res.cookies();
 			for(int i = 0; i < cookies.size(); i++) {
@@ -181,6 +181,31 @@ public class AirlineServiceImpl implements AirlineService {
 		}
 		
 		return a;
+	}
+
+	@Override
+	public int getMaxNum() {
+		int a = dao.getNum();
+		
+		return a;
+	}
+
+	@Override
+	public void insertAirBooking(AirlineBean airBooking) {
+		dao.insertAirBooking(airBooking);
+	}
+
+	@Override
+	public List<AirlineBean> getBookingList(String member_id) {
+		
+		List<AirlineBean> airBookingList = dao.getBookingList(member_id);
+		
+		return airBookingList;
+	}
+
+	@Override
+	public void cancel(int index) {
+		dao.cancel(index);
 	}
 	
 	
