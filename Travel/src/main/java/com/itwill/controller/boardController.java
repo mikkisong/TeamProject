@@ -57,12 +57,12 @@ public class boardController {
 	}
 	
 	// http://localhost:8080/myapp/login	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(HttpSession session) {
-		System.out.println("/boardController GET login() ");
-
-		return "team_project/member/loginForm";
-	}
+//	@RequestMapping(value = "/login", method = RequestMethod.GET)
+//	public String login(HttpSession session) {
+//		System.out.println("/boardController GET login() ");
+//
+//		return "team_project/member/loginForm";
+//	}
 	
 	
 
@@ -83,6 +83,31 @@ public class boardController {
 
 		return "team_project/tour/contact";
 	}
+	
+	// http://localhost:8080/myapp/freeboard
+	@RequestMapping(value = "/freeboard", method = RequestMethod.GET)
+	public String freeboard(HttpSession session) {
+		System.out.println("/boardController GET freeboard() ");
+
+		return "team_project/tour/board/freeboard";
+	}
+	
+	// http://localhost:8080/myapp/together
+	@RequestMapping(value = "/together", method = RequestMethod.GET)
+	public String together(HttpSession session) {
+		System.out.println("/boardController GET together() ");
+
+		return "team_project/tour/board/together";
+	}
+	
+	// http://localhost:8080/myapp/review
+	@RequestMapping(value = "/tourreview", method = RequestMethod.GET)
+	public String tourreview(HttpSession session) {
+		System.out.println("/boardController GET tourreview() ");
+
+		return "team_project/tour/board/review";
+	}
+	
 	
 //	// http://localhost:8080/myapp/flight	
 //	@RequestMapping(value = "/flight", method = RequestMethod.GET)

@@ -121,7 +121,7 @@ $(document).ready(function(){
 				<input type="submit" value="로그인"><br>
 					<input type="checkbox">아이디기억하기
 				</form>
-				<a href='<c:url value="/join"/>'>가입하기</a>
+				<a href="join">가입하기</a>
 				
 			</div>
 		</div>

@@ -94,6 +94,18 @@
 		    <version>1.11.3</version>
 		</dependency>
 		
+				<!--
+			2019.09.05 송민경 추가 
+			Jsoup 라이브러리를 사용하는 방법 
+		-->
+		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+<dependency>
+    <groupId>org.apache.taglibs</groupId>
+    <artifactId>taglibs-standard-impl</artifactId>
+    <version>1.2.5</version>
+</dependency>
+		
+		
 		
 		<!-- AspectJ -->
 		<dependency>
