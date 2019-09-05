@@ -55,27 +55,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	public String getData(Map<String, Object> map) {
-		String returnValue="";
-		// map 형식을 String 형식으로 변환
-		String json = util.getJson(map);
-		
-		try {
-			// json 형식으로 코드를 가져옴 
-			returnValue = util.getCode(json);
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		// 실제 data 만 추출 하기 위해 map로 변경후 데이터 뽑아서 리턴
-		map.clear();
-		// 가져온 코드를 map 형으로 변경
-		map = util.getMap(returnValue);
-		// 실제 데이터는 data 에 담겨 있어서 data 값만 추출
-		returnValue = map.get("data").toString();
-		return returnValue;
-	}
+	
 
 	
 	@RequestMapping(value = "basicTest", method = RequestMethod.GET)
@@ -125,8 +105,8 @@ public class HomeController {
 		} catch (JsonProcessingException e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println("paramData : " + paramData);
-		System.out.println("returnValue : " + returnValue);
+		//System.out.println("paramData : " + paramData);
+		//System.out.println("returnValue : " + returnValue);
 		return returnValue;
 	}
 	
@@ -160,6 +140,29 @@ public class HomeController {
         //System.out.println(jsonStr);
         
         
+		return returnValue;
+	}
+	
+	// 실제 데이터 가져 오기
+	public String getData(Map<String, Object> map) {
+		String returnValue="";
+		// map 형식을 String 형식으로 변환
+		String json = util.getJson(map);
+		
+		try {
+			// json 형식으로 코드를 가져옴 
+			returnValue = util.getCode(json);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// 실제 data 만 추출 하기 위해 map로 변경후 데이터 뽑아서 리턴
+		map.clear();
+		// 가져온 코드를 map 형으로 변경
+		map = util.getMap(returnValue);
+		// 실제 데이터는 data 에 담겨 있어서 data 값만 추출
+		returnValue = map.get("data").toString();
 		return returnValue;
 	}
 	
