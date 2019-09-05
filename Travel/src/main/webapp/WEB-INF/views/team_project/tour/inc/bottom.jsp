@@ -5,7 +5,7 @@
 				<div class="row row-pb-md">
 					<div class="col-md-3 colorlib-widget">
 						<h4>위트래블</h4>
-						<p>최저가 항공권 예매 & 동행자 찾기 & 국내/외 여행커뮤니티 대표 사이트</p>
+						<p>최저가 항공권 예매.  동행자 찾기. 국내/외 최대 여행커뮤니티 사이트</p>
 						<p>
 							<ul class="colorlib-social-icons">
 								<li><a href="#"><i class="icon-twitter"></i></a></li>

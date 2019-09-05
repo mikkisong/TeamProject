@@ -5,7 +5,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tour Template</title>
+	<title>동행게시판 - 위트래블</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -56,6 +56,29 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+
+<script src='<c:url value="/resources/jquery-3.4.1.js"/>'></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$('#check2').submit(function(){
+		var fid = $('#id').val();
+		var fpass = $('#pass').val();
+		
+		if(fid==""){
+			alert("아이디를 입력하세요!")
+			$('#id').focus();
+			return false;
+		}
+		
+		if(fpass=="") {
+			alert("비밀번호를 입력하세요!")
+			$('#pass').focus();
+			return false;
+		}
+	});
+});
+</script>
 	</head>
 	<body>
 		
@@ -63,21 +86,23 @@
 
 	<div id="page">
 		<nav class="colorlib-nav" role="navigation">
+			
 			<!-- 탑메뉴 들어가는 곳 -->
-			<jsp:include page="inc/top.jsp" />
+			<jsp:include page="../inc/top.jsp" />
 			<!-- 탑메뉴 들어가는 곳 -->
+
 		</nav>
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/cover-img-3.jpg);">
+			   	<li style="background-image: url(images/cover-img-2.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h2>WeTravel</h2>
-				   					<h1>고객센터</h1>
+				   					<h2>위트래블</h2>
+				   					<h1>회원로그인</h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -87,93 +112,21 @@
 		  	</div>
 		</aside>
 
-		<div id="colorlib-contact">
+		<div id="colorlib-blog">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 animate-box">
-						<h3>이메일문의</h3>
-						<form action="#">
-							<div class="row form-group">
-								<div class="col-md-6 padding-bottom">
-									<label for="fname">이름</label>
-									<input type="text" id="fname" class="form-control">
-								</div>
-								<div class="col-md-6">
-									<label for="lname">성</label>
-									<input type="text" id="lname" class="form-control">
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for="email">이메일</label>
-									<input type="text" id="email" class="form-control">
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for="subject">제목</label>
-									<input type="text" id="subject" class="form-control">
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for="message">문의내용</label>
-									<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="입력해주세요."></textarea>
-								</div>
-							</div>
-							<div class="form-group text-center">
-								<input type="submit" value="보내기" class="btn btn-primary">
-							</div>
-
-						</form>		
-					</div>
-					<div class="col-md-10 col-md-offset-1 animate-box">
-						<h3>오피스</h3>
-						<div class="row contact-info-wrap">
-							<div class="col-md-3">
-								<p><span><i class="icon-location"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
-							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-globe"></i></span> <a href="#">yoursite.com</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
+				
+				<form action='<c:url value="/member/login"/>' method="post" name="fr" id="check2">
+					아이디:<input type="text" name="id" id="id"><br>
+					비밀번호:<input type="password" name="pass" id="pass"><br>
+				<input type="submit" value="로그인"><br>
+					<input type="checkbox">아이디기억하기
+				</form>
+				<a href='<c:url value="/join"/>'>가입하기</a>
+				
 			</div>
 		</div>
-
-		<div id="map" class="colorlib-map"></div>
 	
-		<div id="colorlib-subscribe" style="background-image: url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
-						<h2>이메일 구독하기</h2>
-						<p>최신여행정보를 받아보세요.</p>
-						<form class="form-inline qbstp-header-subscribe">
-							<div class="row">
-								<div class="col-md-12 col-md-offset-0">
-									<div class="form-group">
-										<input type="text" class="form-control" id="email" placeholder="이메일주소 입력란">
-										<button type="submit" class="btn btn-primary">구독하기</button>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+
 
 		
 	</div>
@@ -182,8 +135,8 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 	</div>
 	
-<!-- 푸터 들어가는 곳 -->
-	<jsp:include page="inc/bottom.jsp" />
+			<!-- 푸터 들어가는 곳 -->
+	<jsp:include page="../inc/bottom.jsp" />
 
 	<!-- jQuery -->
 	<script src="./resources/assets/tour/js/jquery.min.js"></script>
@@ -204,9 +157,6 @@
 	<script src="./resources/assets/tour/js/bootstrap-datepicker.js"></script>
 	<!-- Stellar Parallax -->
 	<script src="./resources/assets/tour/js/jquery.stellar.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="./resources/assets/tour/js/google_map.js"></script>
 
 	<!-- Main -->
 	<script src="./resources/assets/tour/js/main.js"></script>

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -77,21 +76,21 @@
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h2>2 Days Tour</h2>
-				   					<h1>Amazing Maldives Tour</h1>
+				   					<h2>어디든 떠나자</h2>
+				   					<h1>최저가 항공권 예약</h1>
 				   				</div>
 				   			</div>
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(images/img_bg_2.jpg);">
+			   	<li style="background-image: url(/images/img_bg_2.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h2>10 Days Cruises</h2>
-				   					<h1>From Greece to Spain</h1>
+				   					<h2>믿을 수 있는</h2>
+				   					<h1>동행찾기</h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -103,8 +102,8 @@
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h2>Explore our most tavel agency</h2>
-				   					<h1>Our Travel Agency</h1>
+				   					<h2>생생한 정보</h2>
+				   					<h1>여행후기</h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -116,8 +115,8 @@
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h2>Experience the</h2>
-				   					<h1>Best Trip Ever</h1>
+				   					<h2>실용적인 정보만</h2>
+				   					<h1>꿀팁게시판</h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -146,7 +145,7 @@
 				              	 	<div class="form-group">
 				                    <label for="date">출발지:</label>
 				                    <div class="form-field">
-				                      <input type="text" id="location" name="cityfrom" class="form-control" placeholder="예) 부산">
+				                      <input type="search" id="location" name="cityfrom" class="form-control" placeholder="예) 부산">
 				                    </div>
 				                  </div>
 				              	 </div>
@@ -154,7 +153,7 @@
 				              	 	<div class="form-group">
 				                    <label for="date">도착지:</label>
 				                    <div class="form-field">
-				                      <input type="text" id="location" class="form-control" name="cityto" placeholder="예) 하와이">
+				                      <input type="search" id="location" class="form-control" name="cityto" placeholder="예) 하와이">
 				                    </div>
 				                  </div>
 				              	 </div>
@@ -741,14 +740,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
-						<h2>Sign Up for a Newsletter</h2>
-						<p>Sign up for our mailing list to get latest updates and offers.</p>
+						<h2>이메일 구독하기</h2>
+						<p>최신여행정보를 받아보세요.</p>
 						<form class="form-inline qbstp-header-subscribe">
 							<div class="row">
 								<div class="col-md-12 col-md-offset-0">
 									<div class="form-group">
-										<input type="text" class="form-control" id="email" placeholder="Enter your email">
-										<button type="submit" class="btn btn-primary">Subscribe</button>
+										<input type="text" class="form-control" id="email" placeholder="이메일주소 입력란">
+										<button type="submit" class="btn btn-primary">구독하기</button>
 									</div>
 								</div>
 							</div>

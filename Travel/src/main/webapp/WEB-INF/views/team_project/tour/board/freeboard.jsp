@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE HTML>
+    
+    <!DOCTYPE HTML>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tour Template</title>
+	<title>자유게시판 - 위트래블</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -60,12 +61,12 @@
 	<body>
 		
 	<div class="colorlib-loader"></div>
-
 	<div id="page">
 		<nav class="colorlib-nav" role="navigation">
 			<!-- 탑메뉴 들어가는 곳 -->
-			<jsp:include page="inc/top.jsp" />
+			<jsp:include page="../inc/top.jsp" />
 			<!-- 탑메뉴 들어가는 곳 -->
+			
 		</nav>
 		<aside id="colorlib-hero">
 			<div class="flexslider">
@@ -74,10 +75,10 @@
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
-				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h2>WeTravel</h2>
-				   					<h1>고객센터</h1>
+				   					<h2>위트래블</h2>
+				   					<h1>자유게시판</h1>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -87,94 +88,98 @@
 		  	</div>
 		</aside>
 
-		<div id="colorlib-contact">
+		<div id="colorlib-services">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-10 col-md-offset-1 animate-box">
-						<h3>이메일문의</h3>
-						<form action="#">
-							<div class="row form-group">
-								<div class="col-md-6 padding-bottom">
-									<label for="fname">이름</label>
-									<input type="text" id="fname" class="form-control">
-								</div>
-								<div class="col-md-6">
-									<label for="lname">성</label>
-									<input type="text" id="lname" class="form-control">
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for="email">이메일</label>
-									<input type="text" id="email" class="form-control">
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for="subject">제목</label>
-									<input type="text" id="subject" class="form-control">
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for="message">문의내용</label>
-									<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="입력해주세요."></textarea>
-								</div>
-							</div>
-							<div class="form-group text-center">
-								<input type="submit" value="보내기" class="btn btn-primary">
-							</div>
-
-						</form>		
+					<div class="col-md-3 animate-box text-center">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-around"></i>
+							</span>
+							<h3>Amazing Travel</h3>
+							<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
+						</div>
 					</div>
-					<div class="col-md-10 col-md-offset-1 animate-box">
-						<h3>오피스</h3>
-						<div class="row contact-info-wrap">
-							<div class="col-md-3">
-								<p><span><i class="icon-location"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
-							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-globe"></i></span> <a href="#">yoursite.com</a></p>
-							</div>
+					<div class="col-md-3 animate-box text-center">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-boat"></i>
+							</span>
+							<h3>Our Cruises</h3>
+							<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
+						</div>
+					</div>
+					<div class="col-md-3 animate-box text-center">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-car"></i>
+							</span>
+							<h3>Book Your Trip</h3>
+							<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
+						</div>
+					</div>
+					<div class="col-md-3 animate-box text-center">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-postcard"></i>
+							</span>
+							<h3>Nice Support</h3>
+							<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="map" class="colorlib-map"></div>
-	
-		<div id="colorlib-subscribe" style="background-image: url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
+		<div id="colorlib-testimony" class="colorlib-light-grey">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
-						<h2>이메일 구독하기</h2>
-						<p>최신여행정보를 받아보세요.</p>
-						<form class="form-inline qbstp-header-subscribe">
-							<div class="row">
-								<div class="col-md-12 col-md-offset-0">
-									<div class="form-group">
-										<input type="text" class="form-control" id="email" placeholder="이메일주소 입력란">
-										<button type="submit" class="btn btn-primary">구독하기</button>
-									</div>
-								</div>
-							</div>
-						</form>
+						<h2>Our Satisfied Guests says</h2>
+						<p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 animate-box">						
+						<div class="owl-carousel2">
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url(images/person1.jpg);"></span>
+									<span class="user">Alysha Myers</span>
+									<small>Miami Florida, USA</small>
+									<blockquote>
+										<p>" A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url(images/person2.jpg);"></span>
+									<span class="user">James Fisher</span>
+									<small>New York, USA</small>
+									<blockquote>
+										<p>One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url(images/person3.jpg);"></span>
+									<span class="user">Jacob Webb</span>
+									<small>Athens, Greece</small>
+									<blockquote>
+										<p>Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
 			</div>
 		</div>
 
+	
+		
 		
 	</div>
 
@@ -182,8 +187,8 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 	</div>
 	
-<!-- 푸터 들어가는 곳 -->
-	<jsp:include page="inc/bottom.jsp" />
+		<!-- 푸터 들어가는 곳 -->
+	<jsp:include page="../inc/bottom.jsp" />
 
 	<!-- jQuery -->
 	<script src="./resources/assets/tour/js/jquery.min.js"></script>
@@ -204,9 +209,6 @@
 	<script src="./resources/assets/tour/js/bootstrap-datepicker.js"></script>
 	<!-- Stellar Parallax -->
 	<script src="./resources/assets/tour/js/jquery.stellar.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="./resources/assets/tour/js/google_map.js"></script>
 
 	<!-- Main -->
 	<script src="./resources/assets/tour/js/main.js"></script>

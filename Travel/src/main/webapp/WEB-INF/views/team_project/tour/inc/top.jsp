@@ -5,25 +5,25 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="tourindex">Tour</a></div>
+							<div id="colorlib-logo"><a href="tourindex">WeTravel</a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
+<!-- 								<li class="active"><a href="tourindex">메인</a></li> -->
+								<li><a href="tourindex">메인</a></li>
 								<li class="has-dropdown">
-									<a href="tours.html">Tours</a>
+									<a href="#">여행스토리</a>
 									<ul class="dropdown">
-										<li><a href="#">Destination</a></li>
-										<li><a href="#">Cruises</a></li>
-										<li><a href="#">Hotels</a></li>
-										<li><a href="#">Booking</a></li>
+										<li><a href="together">동행게시판</a></li>
+										<li><a href="tourreview">여행후기</a></li>
+										<li><a href="freeboard">자유게시판</a></li>
 									</ul>
 								</li>
-								<li><a href="hotels.html">Hotels</a></li>
-								<li><a href="services.html">Services</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="tourcontact">Contact</a></li>
+								<li><a href="#">Hotels</a></li>
+								<li><a href="#">Services</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="tourcontact">고객센터</a></li>
+								<li><a href="tourlogin">로그인</a></li>
 							</ul>
 						</div>
 					</div>
